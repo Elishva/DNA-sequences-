@@ -12,7 +12,7 @@ class Execute
   public:
  
 
-  int run();
+  bool run();
   void createCommand( char *command);
 
   private:

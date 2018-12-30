@@ -1,9 +1,8 @@
 #ifndef __ICOMMAND_H__
 #define __ICOMMAND_H__
 
-#include "../model/DNA_AND_DATA.h"
-#include "../model/DnaWriter.h"
-#include "../model/DnaReader.h"
+#include "../model/DNAS.h"
+
 class ICommand
 {
   public:
@@ -11,7 +10,8 @@ class ICommand
   virtual void action(char ** values) = 0 ;
   virtual const char * help() = 0;
 
-
+  protected:
+    DNAS m_AllDNAS;
 
 };
 #endif

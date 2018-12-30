@@ -9,7 +9,8 @@ int main()
     //{
        
         
-        execute->run(); 
+        if(execute->run()==false)
+          return 0; 
 
 
     //}
