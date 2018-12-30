@@ -1,25 +1,43 @@
 #include "load.h"
 
 #include <cstdio>
-
+#include "../model/DnaReader.h"
+std::string Load::m_message = "" ;
 
 bool Load::checkValues( char **values)
 {
   return true;
 }
 
+
 void Load::action( char ** values)
 {
 
-  printf(" &&&&&&&&&&&&&&&&&     A C T I O N   L O A D      $$$$$$$$$$$$$$$ \n " ); 
+   DnaReader dna_reader (values[0]);
+   DNA dna = dna_reader.read();
+   std::stringstream m ;
+   m << dna;
+   std::string message = m.str(); 
+
+   DnaAndData* dnaAdata = new DnaAndData(message, values[1] + 1);
+   m_AllDNAS.addNewDNA(dnaAdata);
   
-  
+   std::stringstream msg;
+   msg << "[" << dnaAdata->get_id() << "] " << dnaAdata->get_name() << ": " << dnaAdata->get_DNA();
+   m_message = msg.str();
 }
 
-const char * Load::help()
+
+std::string Load::help()
 {
-    const char * m_help = "HELP"; 
-    return m_help;
+     
+    return  "HELP";
+}
+
+
+std::string Load::get_message()
+{
+   return m_message;
 }
 
 

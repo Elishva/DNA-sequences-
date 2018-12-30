@@ -1,8 +1,6 @@
-Prog:CLI.o parser.o testView.o
+CC=g++
+prog:parser.o 
 
-parser.o:parser.h
-	g++ -ansi -pedantic -Wall -c "view/parser.cpp" 
-CLI.o: parser.h CLI.h 
-	g++ -ansi -pedantic -Wall -c "view/CLI.cpp" 
-testView.o:CLI.h 
- 	g++ -ansi -pedantic -Wall -c "view/CLI.cpp" 
+parser.o:parser.cpp parser.h
+	$(CC) -c -pedantic -Wall -Werror -Wconversion -ansi parser.cpp
+     

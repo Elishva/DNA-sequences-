@@ -8,7 +8,7 @@ enum Status{NEW, UPTODATE, MODIFIED};
 class DnaAndData
 {
 public:
-	DnaAndData(const char* dna, const char * name);
+	DnaAndData(std::string dna, const char * name);
 	~DnaAndData();
 	
 	void set_status(Status s);
@@ -27,4 +27,4 @@ private:
 
 	static size_t count_id; 
 };
-#endif
+#endif  // __DNA_AND_DATA__H 

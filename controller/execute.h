@@ -5,6 +5,7 @@
 #include "ICommand.h"
 #include "New.h"
 #include "load.h"
+#include "list.h"
 #include "../view/CLI.h"
 
 class Execute
@@ -22,4 +23,4 @@ class Execute
 };
 
 
-#endif
+#endif// __EXECUTE_H__

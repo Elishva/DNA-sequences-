@@ -2,15 +2,18 @@
 #define __LOAD_H__
 
 #include "ICommand.h"
+#include <sstream>
 class Load:public ICommand
 {
   public:
   bool checkValues( char **values);
   void action( char **values);
-  const char * help();
+  std::string help();
+  std::string get_message();
 
-
+  private:
+  static std::string m_message;
 
 };
 
-#endif
+#endif //__LOAD_H__

@@ -1,16 +1,18 @@
 #ifndef __NEW_H__
 #define __NEW_H__
-
 #include "ICommand.h"
+#include <sstream>
+
 class New:public ICommand
 {
   public:
   bool checkValues( char **values);
   void action( char **values);
-  const char * help();
-
-
+  std::string help();
+   std::string get_message();
+  private:
+    static std::string m_message ;
 
 };
 
-#endif
+#endif // __NEW_H__

@@ -10,7 +10,7 @@ class DnaReader {
 private:
     std::ifstream m_reader;
 public:
-    DnaReader(const char* file_name);
+    DnaReader(char* file_name);
     ~DnaReader();
     DNA read();
 };

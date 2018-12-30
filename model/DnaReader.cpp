@@ -1,6 +1,6 @@
 
 #include "DnaReader.h"
-DnaReader::DnaReader(const char* file_name)
+DnaReader::DnaReader(char* file_name)
 {
     std::cout<< "HI"<<std::endl;
     m_reader.open(file_name);

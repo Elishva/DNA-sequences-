@@ -1,7 +1,7 @@
 #ifndef __CLI_H__
 #define __CLI_H__
 
-#include <cstdio>
+#include <iostream>
 #include <cstring>
 
 #include "parser.h"
@@ -9,11 +9,10 @@
 class CLI 
 {
    public:
-     
-     CLI();
+    
      char** getCommand_from_user();
      char * getCommand();
-  
+     void output(std::string s);
    private:
      char m_command [100];
      Parser m_parser;

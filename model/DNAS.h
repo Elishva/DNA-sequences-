@@ -6,12 +6,16 @@
 
 class DNAS
 {
-public:
+   public:
 	void addNewDNA(DnaAndData *dnaToAdd);
 	void print();
-private:
-	std::map<size_t, DnaAndData *> m_DNAS;
+        std::string getAsString(); 
+   private:
+	std::map<size_t, DnaAndData *> m_DNAS_id;
+        std::map<std::string, DnaAndData *> m_DNAS_name;
 };
+
+
 #endif //__DNAS__H
 
 

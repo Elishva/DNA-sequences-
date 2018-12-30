@@ -44,6 +44,7 @@ public:
     DNA::Nucleotide operator[](size_t index);
     bool operator==(const DNA& other)const;
     bool operator!=(const DNA& other)const;
+    
     friend std::ostream &operator<<(std::ostream& os, const DNA& data);
 
     Nucleotide* get_m_seq() const;
