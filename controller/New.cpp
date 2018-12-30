@@ -1,5 +1,6 @@
 #include "New.h"
 #include <cstdio>
+#include <sstream>
 
 std::string New::m_message = "" ;
 bool New::checkValues( char **values)

@@ -1,7 +1,7 @@
 #ifndef __NEW_H__
 #define __NEW_H__
 #include "ICommand.h"
-#include <sstream>
+
 
 class New:public ICommand
 {

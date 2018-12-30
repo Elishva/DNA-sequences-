@@ -1,26 +1,32 @@
 #include "DNAS.h"
 #include <cstdio>
+#include <sstream>
 
 void DNAS::addNewDNA(DnaAndData *dnaToAdd)
 {
 	m_DNAS_id[dnaToAdd->get_id()] = dnaToAdd;
-        m_DNAS_name[dnaToAdd->get_name()] = dnaToAdd;
+    m_DNAS_name[dnaToAdd->get_name()] = dnaToAdd;
 }
 
 std::string DNAS::getAsString()
 {
+
+
 	std::stringstream ss;
-	for(std::map<size_t, DnaAndData *>::const_iterator it = m_DNAS.begin(); it != m_DNAS.end(); ++it)
+	for(std::map<size_t, DnaAndData *>::const_iterator it = m_DNAS_id.begin(); it != m_DNAS_id.end(); ++it)
 	{
-		Status stat = it->second->getStatus();
-		if (stat == UpToDate)
+        std::cout <<"SSSSSSSSSHHHHHHHHHAAAAAAAALOM";
+		Status stat = it->second->get_status();
+		if (stat == UPTODATE)
 			ss << "-";
-		else if (stat == Modified)
+		else if (stat == MODIFIED)
 			ss << "*";
-		else if (stat == New)
+		else if (stat == NEW)
 			ss << "o";		
-		ss << " [" << it->first << "] " << it->second->getName() << ": " << it->second->getDNA() << std::endl;
+		std::cout << " [" << it->first << "] " << it->second->get_name() << ": " << it->second->get_DNA() << std::endl;
 	}
+    
+    std::cout << ss.str();
 	return ss.str();
 }
 
