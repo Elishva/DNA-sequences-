@@ -5,7 +5,8 @@
 #include "ICommand.h"
 #include "New.h"
 #include "load.h"
-#include "list.h"
+//#include "list.h"
+//#include "saveDNA.h"
 #include "../view/CLI.h"
 
 class Execute
@@ -19,7 +20,7 @@ class Execute
   private:
   CLI  m_cli;
   ICommand *m_command; 
-  
+  DNAS m_AllDNAS;
 };
 
 

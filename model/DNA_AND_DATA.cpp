@@ -1,7 +1,7 @@
 #include "DNA_AND_DATA.h"
 #include "cstring"
 size_t DnaAndData::count_id = 1;
-DnaAndData::DnaAndData(std::string dna, const char* name):m_id(count_id++), m_name(name), m_status(NEW), m_DNA(DNA(dna))
+DnaAndData::DnaAndData( DNA *dna, const char* name):m_id(count_id++), m_name(name), m_status(NEW), m_DNA(dna)
 {	
 }
 
@@ -20,7 +20,7 @@ size_t DnaAndData::get_id()
 
 DNA& DnaAndData::get_DNA()
 {
-	return m_DNA;
+	return *m_DNA;
 }
 
 std::string DnaAndData::get_name()

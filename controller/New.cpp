@@ -3,16 +3,17 @@
 #include <sstream>
 
 std::string New::m_message = "" ;
+
 bool New::checkValues( char **values)
 {
   return values[1][0] == '@';
 }
 
-void New::action( char ** values)
+void New::action(char **values , DNAS & dnas)
 {
-    if(!checkValues(values))return;
+    //if(!checkValues(values))return;
     DnaAndData* dnaAdata = new DnaAndData(values[0], values[1]+1);
-    m_AllDNAS.addNewDNA(dnaAdata);
+    dnas.addNewDNA(dnaAdata);
 
     std::stringstream message;
     message << "[" << dnaAdata->get_id() << "] " << dnaAdata->get_name() << ": " << dnaAdata->get_DNA();

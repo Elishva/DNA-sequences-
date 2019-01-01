@@ -8,6 +8,7 @@ void DNAS::addNewDNA(DnaAndData *dnaToAdd)
     m_DNAS_name[dnaToAdd->get_name()] = dnaToAdd;
 }
 
+/*
 std::string DNAS::getAsString()
 {
 
@@ -15,7 +16,6 @@ std::string DNAS::getAsString()
 	std::stringstream ss;
 	for(std::map<size_t, DnaAndData *>::const_iterator it = m_DNAS_id.begin(); it != m_DNAS_id.end(); ++it)
 	{
-        std::cout <<"SSSSSSSSSHHHHHHHHHAAAAAAAALOM";
 		Status stat = it->second->get_status();
 		if (stat == UPTODATE)
 			ss << "-";
@@ -29,7 +29,7 @@ std::string DNAS::getAsString()
     std::cout << ss.str();
 	return ss.str();
 }
-
+*/
 void DNAS::print()
 {
       

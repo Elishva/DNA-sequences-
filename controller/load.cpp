@@ -1,7 +1,9 @@
-#include "load.h"
+#include <iostream>
 
-#include <cstdio>
+#include "load.h"
 #include "../model/DnaReader.h"
+
+
 std::string Load::m_message = "" ;
 
 bool Load::checkValues( char **values)
@@ -10,7 +12,7 @@ bool Load::checkValues( char **values)
 }
 
 
-void Load::action( char ** values)
+void Load::action( char ** values,DNAS & dnas)
 {
 
    DnaReader dna_reader (values[0]);
@@ -20,7 +22,7 @@ void Load::action( char ** values)
    std::string message = m.str(); 
 
    DnaAndData* dnaAdata = new DnaAndData(message, values[1] + 1);
-   m_AllDNAS.addNewDNA(dnaAdata);
+   dnas.addNewDNA(dnaAdata);
   
    std::stringstream msg;
    msg << "[" << dnaAdata->get_id() << "] " << dnaAdata->get_name() << ": " << dnaAdata->get_DNA();

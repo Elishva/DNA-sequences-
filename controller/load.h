@@ -1,13 +1,14 @@
 #ifndef __LOAD_H__
 #define __LOAD_H__
 
-#include "ICommand.h"
+
 #include <sstream>
+#include "ICommand.h"
 class Load:public ICommand
 {
   public:
   bool checkValues( char **values);
-  void action( char **values);
+  void action( char **values, DNAS & dnas);
   std::string help();
   std::string get_message();
 
