@@ -3,6 +3,7 @@
 #define DNASEQ_DNA_H
 #include <iostream>
 #include "Nucleotide.h"
+#include "IDNA.h"
 class DNA {
 private:
     
@@ -23,10 +24,10 @@ public:
     ~DNA();
 
     DNA& operator=(const DNA& data);
-    //DNA& operator=(const std::string& data);
-    //DNA& operator=(const char* data);
-    //Nucleotide operator[](size_t index)const;
-    Nucleotide operator[](size_t index);
+
+
+    Nucleotide operator[](size_t index)const;
+    //Nucleotide operator[](size_t index);
     //bool operator==(const DNA& other)const;
     //bool operator!=(const DNA& other)const;
     

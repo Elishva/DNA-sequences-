@@ -8,7 +8,7 @@ class Parser
 
      char** parseCommand( char* cli);
      char ** getParams();
-     char * operator [](int idx); 
+
   
 
    private:

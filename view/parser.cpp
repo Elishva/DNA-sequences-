@@ -20,12 +20,6 @@ char** Parser::parseCommand(char* cli)
 }
 
 
-char * Parser::operator [](int idx)
-{
-   return m_params[idx];
-}
-
-
 char ** Parser::getParams()
 {
    return m_params;

@@ -2,10 +2,6 @@
 #include <cstring>
 #include "DNA.h"
 
-
-
-
-
 inline bool is_valid_length(const size_t len)
 {
     return (!(len % 3 && len != 0) );
@@ -103,13 +99,12 @@ Nucleotide DNA::operator[](size_t index)const
 }
 
 
-
+/*
 Nucleotide DNA::operator[](size_t index)
 {
     return this->m_seq[index];
 }
-
-
+*/
 /*
 DNA DNA::get_slice(size_t from, size_t to)
 {
