@@ -6,7 +6,7 @@
 class New:public ICommand
 {
   public:
-  bool checkValues( char **values);
+  bool checkValues(char **values);
   void action( char **values , DNAS & dnas);
   std::string help();
   std::string get_message();

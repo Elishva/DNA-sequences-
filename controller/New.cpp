@@ -11,8 +11,9 @@ bool New::checkValues( char **values)
 
 void New::action(char **values , DNAS & dnas)
 {
-    //if(!checkValues(values))return;
-    DnaAndData* dnaAdata = new DnaAndData(values[0], values[1]+1);
+    if(!checkValues(values))return;
+    DNA * dna = new DNA(values[0]);
+    DnaAndData* dnaAdata = new DnaAndData(dna, values[1]+1);
     dnas.addNewDNA(dnaAdata);
 
     std::stringstream message;

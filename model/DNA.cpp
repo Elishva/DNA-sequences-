@@ -4,11 +4,7 @@
 
 
 
-std::ostream &operator<<(std::ostream& os, const DNA::Nucleotide& n)
-{
-    os << n.get_m_nucleotide();
-    return os;
-}
+
 
 inline bool is_valid_length(const size_t len)
 {
@@ -33,6 +29,8 @@ Nucleotide* DNA::valid_sequence(const char* c)
     }
     return temp;
 }
+
+
 
 
 DNA::DNA(const char* c)
@@ -86,34 +84,8 @@ size_t DNA::get_m_length_seq() const
     return m_length_seq;
 }
 
-DNA& DNA::operator=(const DNA& other)
-{
-    Nucleotide* temp = new Nucleotide[m_length_seq];
-    for (size_t i = 0; i < m_length_seq; i++)
-    {
-        temp[i] = other.m_seq[i];
-    }
-    delete[](this->m_seq);
-    m_seq = temp;
-    m_length_seq = other.m_length_seq;
-    return *this;
-}
 
-DNA& DNA::operator=(const char* c)
-{
-    Nucleotide* temp = valid_sequence(c);
-    delete[](this->m_seq);
-    m_seq = temp;
-    m_length_seq = strlen(c);
-    return *this;
-}
 
-DNA& DNA::operator=(const std::string& s)
-{
-    return *this = s.c_str();
-}
-
-/*
 std::ostream &operator<<(std::ostream& os, const DNA& data)
 {
     for (size_t i = 0; i < data.m_length_seq ; ++i)
@@ -122,29 +94,28 @@ std::ostream &operator<<(std::ostream& os, const DNA& data)
     }
     return os;
 }
-*/
 
-/*
-bool DNA::operator!=(const DNA& other)const
-{
-    return !(*this == other);
-}
-*/
-/*
-DNA::Nucleotide DNA::operator[](size_t index)const
+
+
+Nucleotide DNA::operator[](size_t index)const
 {
     return this->m_seq[index];
 }
 
-DNA::Nucleotide DNA::operator[](size_t index)
+
+
+Nucleotide DNA::operator[](size_t index)
 {
     return this->m_seq[index];
 }
-*/
+
+
+/*
 DNA DNA::get_slice(size_t from, size_t to)
 {
     return DNA(*this, from, to);
 }
+*/
 
 /*
 DNA DNA::get_pair()

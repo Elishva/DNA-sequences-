@@ -4,7 +4,7 @@
 
 void DNAS::addNewDNA(DnaAndData *dnaToAdd)
 {
-	m_DNAS_id[dnaToAdd->get_id()] = dnaToAdd;
+    m_DNAS_id[dnaToAdd->get_id()] = dnaToAdd;
     m_DNAS_name[dnaToAdd->get_name()] = dnaToAdd;
 }
 
