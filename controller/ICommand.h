@@ -1,6 +1,5 @@
 #ifndef __ICOMMAND_H__
 #define __ICOMMAND_H__
-
 #include "../model/DNAS.h"
 #include <iostream>
 class ICommand

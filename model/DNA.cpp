@@ -1,6 +1,7 @@
 #include <cassert>
 #include <cstring>
 #include "DNA.h"
+#include "IDNA.h"
 
 inline bool is_valid_length(const size_t len)
 {

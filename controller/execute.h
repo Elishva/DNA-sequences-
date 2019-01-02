@@ -4,7 +4,7 @@
 #include <vector> 
 #include "ICommand.h"
 #include "New.h"
-//#include "load.h"
+#include "load.h"
 //#include "list.h"
 //#include "saveDNA.h"
 #include "../view/CLI.h"

@@ -2,9 +2,8 @@
 #ifndef DNASEQ_DNA_H
 #define DNASEQ_DNA_H
 #include <iostream>
-#include "Nucleotide.h"
 #include "IDNA.h"
-class DNA {
+class DNA: public IDNA {
 private:
     
     Nucleotide* m_seq;

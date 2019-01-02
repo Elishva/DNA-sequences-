@@ -32,7 +32,7 @@ void Execute::createCommand(char * command)
     
     else if(strcmp(command,"load") == 0)
     {
-         //m_command = new Load();
+         m_command = new Load();
 
     }
     /*
