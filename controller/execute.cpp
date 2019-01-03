@@ -41,11 +41,14 @@ void Execute::createCommand(char * command)
          m_command = new Show();
     }
     
-    else if (strcmp(command,"save") == 0)
-    {
-       m_command = new Save();
+	else if (strcmp(command,"save") == 0)
+	{
+		m_command = new Save();
     }
-
+	else if (strcmp(command,"list") == 0)
+    {
+       m_command = new List();
+    }
   
 }
 

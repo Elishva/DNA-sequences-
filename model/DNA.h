@@ -4,18 +4,8 @@
 #include <iostream>
 #include "IDNA.h"
 class DNA: public IDNA {
-private:
+
     
-    Nucleotide* m_seq;
-    size_t m_length_seq;
-
-    //bool Nucleotidecmp(const Nucleotide* n1, size_t len_n1, const Nucleotide* n2, size_t len_n2)const;
-    Nucleotide* valid_sequence(const char* c);
-
-
-
-
-
 public:
     explicit DNA(const char* seq);
     explicit DNA(const std::string& seq);
@@ -39,6 +29,14 @@ public:
 
 private:
     DNA(const DNA& other, size_t from, size_t to);
+
+    Nucleotide* m_seq;
+    size_t m_length_seq;
+
+    //bool Nucleotidecmp(const Nucleotide* n1, size_t len_n1, const Nucleotide* n2, size_t len_n2)const;
+    Nucleotide* valid_sequence(const char* c);
+
+
 };
 
 /*

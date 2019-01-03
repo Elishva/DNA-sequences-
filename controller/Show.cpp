@@ -11,8 +11,7 @@ bool Show::checkValues( char **values)
 
 void Show::action(char **values , DNAS & dnas)
 {
-	std::cout << "$$$$$$$$$$$$$$$$$$ S H O W @@@@@@@@@@@@@@@@@@@@@@ " << std::endl;
-	//if(!checkValues(values))return;
+	if(!checkValues(values))return;
 	size_t index;
         std::stringstream v;
         std::string str;
@@ -30,17 +29,16 @@ void Show::action(char **values , DNAS & dnas)
 
 	if (values[0][0] == '#')
 	{
-		++(*values);
-		v << values;
+		v << values[0]+1;
 		v>>index;
 		dnaAdata = dnas[index];
 			
 	} 
        
        
-	/*std::stringstream message;
+	std::stringstream message;
 	message << "[" << dnaAdata->get_id() << "] " << dnaAdata->get_name() << ": " << dnaAdata->get_DNA();
-	m_message = message.str();*/
+	m_message = message.str();
   
 }
 

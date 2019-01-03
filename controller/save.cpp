@@ -17,13 +17,10 @@ void Save::action(char **values , DNAS & dnas)
 	DnaWriter dna_writer (values[1] + 1);
 	DNA dna (values[0]);
 	dna_writer.write(dna);
-
-
-
 		
-	/*std::stringstream message;
-	message << "[" << dnaAdata->get_id() << "] " << dnaAdata->get_name() << ": " << dnaAdata->get_DNA();
-	m_message = message.str();*/
+	std::stringstream message;
+	message << "seq:" << values[0];
+	m_message = message.str();
   
 }
 

@@ -19,34 +19,25 @@ DnaAndData * DNAS::operator [](size_t indx) const
 {
 	return m_DNAS_id.find(indx)->second;
 }
-/*
-std::string DNAS::getAsString()
+
+
+std::string DNAS::getList()
 {
-
-
 	std::stringstream ss;
 	for(std::map<size_t, DnaAndData *>::const_iterator it = m_DNAS_id.begin(); it != m_DNAS_id.end(); ++it)
 	{
-		Status stat = it->second->get_status();
-		if (stat == UPTODATE)
-			ss << "-";
-		else if (stat == MODIFIED)
-			ss << "*";
-		else if (stat == NEW)
-			ss << "o";		
-		std::cout << " [" << it->first << "] " << it->second->get_name() << ": " << it->second->get_DNA() << std::endl;
+            m_DNAS_id[it->first];
+			Status stat = it->second->get_status();
+			if (stat == UPTODATE)
+				ss << "-";
+			else if (stat == MODIFIED)
+				ss << "*";
+			else if (stat == NEW)
+				ss << "o";
+			ss << " [" << it->first << "] " << it->second->get_name() << ": " << it->second->get_DNA() << "\n";
 	}
-    
-    std::cout << ss.str();
 	return ss.str();
+	
 }
 
-void DNAS::print()
-{
-      
-   for(std::map<size_t, DnaAndData *>::const_iterator it = m_DNAS_id.begin(); it != m_DNAS_id.end(); ++it)
-   {
-	std::cout << it->first << ",  " << it->second->get_name() << std::endl;
-   }
-}
-*/
+

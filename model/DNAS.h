@@ -11,7 +11,7 @@ class DNAS
 	DnaAndData * operator [](std::string idx) const;
 	DnaAndData * operator [](size_t indx) const;
 	void print();
-        //std::string getAsString(); 
+        std::string getList(); 
    private:
 	std::map<size_t, DnaAndData *> m_DNAS_id;
         std::map<std::string, DnaAndData *> m_DNAS_name;
