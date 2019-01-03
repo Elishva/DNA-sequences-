@@ -8,6 +8,8 @@ class DNAS
 {
    public:
 	void addNewDNA(DnaAndData *dnaToAdd);
+	DnaAndData * operator [](std::string idx) const;
+	DnaAndData * operator [](size_t indx) const;
 	void print();
         //std::string getAsString(); 
    private:

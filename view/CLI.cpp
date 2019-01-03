@@ -1,12 +1,11 @@
 #include "CLI.h"
 #include <iostream>
-
+#include <cstdio>
 
 char** CLI::getCommand_from_user()
 {
-  printf(">cmd >>> ");
+  std::cout << "\n>cmd >>> ";
   if(fgets(m_command, sizeof(m_command), stdin) == NULL) return 0;
-  printf("%s",m_command);
   if(m_command[strlen(m_command) -1] == '\n')
      m_command[strlen(m_command) -1] = '\0';
   return m_parser.parseCommand(m_command);
@@ -23,4 +22,6 @@ char * CLI::getCommand()
 {
    return m_command;
 }
+
+
 

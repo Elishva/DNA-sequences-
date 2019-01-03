@@ -5,8 +5,9 @@
 #include "ICommand.h"
 #include "New.h"
 #include "load.h"
+#include "Show.h"
 //#include "list.h"
-//#include "saveDNA.h"
+#include "save.h"
 #include "../view/CLI.h"
 
 class Execute

@@ -8,13 +8,15 @@ char** Parser::parseCommand(char* cli)
 {
  
 	char *word= strtok(cli, DELIMETER);
-
-	for (int i=0 ;word ;++i)
+        int i;
+	for ( i=0 ;word && word[0] ;++i)
   	 {
 		m_params[i] = word;
 		word =strtok(NULL, DELIMETER); 
-  	 } 
+  	 }
+         m_params[i]=NULL; 
   	 return m_params;
+      
 
 }
 

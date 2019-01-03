@@ -8,6 +8,17 @@ void DNAS::addNewDNA(DnaAndData *dnaToAdd)
     m_DNAS_name[dnaToAdd->get_name()] = dnaToAdd;
 }
 
+
+DnaAndData * DNAS::operator [](std::string indx) const
+{
+	std::cout << indx;
+	 return m_DNAS_name.find(indx)->second;
+}
+
+DnaAndData * DNAS::operator [](size_t indx) const
+{
+	return m_DNAS_id.find(indx)->second;
+}
 /*
 std::string DNAS::getAsString()
 {
@@ -29,7 +40,7 @@ std::string DNAS::getAsString()
     std::cout << ss.str();
 	return ss.str();
 }
-*/
+
 void DNAS::print()
 {
       
@@ -38,3 +49,4 @@ void DNAS::print()
 	std::cout << it->first << ",  " << it->second->get_name() << std::endl;
    }
 }
+*/

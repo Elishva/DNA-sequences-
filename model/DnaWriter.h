@@ -1,5 +1,5 @@
-#ifndef DNASEQ_DNAWRITER_H
-#define DNASEQ_DNAWRITER_H
+#ifndef __DNAWRITER_H__
+#define __DNAWRITER_H__
 
 #include "DNA.h"
 #include <fstream>
@@ -16,4 +16,4 @@ public:
 };
 
 
-#endif //DNASEQ_DNAWRITER_H
+#endif //__DNAWRITER_H__

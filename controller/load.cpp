@@ -14,7 +14,6 @@ bool Load::checkValues( char **values)
 
 void Load::action( char ** values,DNAS & dnas)
 {
-	std::cout << "HHHHHII" << std::endl;
 	DnaReader dna_reader (values[0]);
 	IDNA *dna = new DNA( dna_reader.read());
 	std::stringstream m ;
