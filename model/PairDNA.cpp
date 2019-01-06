@@ -1,14 +1,14 @@
 #include "PairDNA.h"
 
-PairDNA::PairDNA(IDNA *idna):m_Idna(idna),m_length_seq()
+PairDNA::PairDNA(IDNA *idna):m_Idna(idna)
 {
 }
 Nucleotide PairDNA::operator[](size_t index)const
 {
-    return this->m_idna[index].get_pair();
+    return m_Idna->operator[](index).get_pair();
 
 }
 size_t PairDNA::get_m_length_seq() const
 {
-	return m_idna->get_m_length_seq();
+	return m_Idna->get_m_length_seq();
 }

@@ -7,7 +7,7 @@ class Factory
 		Factory();
 		ICommand* getCommand(const char * command)const;
 	private:
-		std::map<char *, ICommand *> m_commands;			
+		std::map<const char *, ICommand *> m_commands;			
 };
 
 #endif //__FACTORY_H__

@@ -15,4 +15,4 @@ class PairDNA: public IDNA
 };
 
 
-#endif
+#endif // __PAIRDNA_H__
