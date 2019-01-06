@@ -2,13 +2,14 @@
 #define __EXECUTE_H__
 
 #include <vector> 
-//#include "factory.h"
-#include "ICommand.h"
-#include "New.h"
+#include "factory.h"
+//#include "ICommand.h"
+/*#include "New.h"
 #include "load.h"
 #include "Show.h"
 #include "list.h"
 #include "save.h"
+#include "pair.h"*/
 #include "../view/CLI.h"
 
 class Execute
@@ -20,8 +21,8 @@ class Execute
 
 	private:
 		CLI  m_cli;
-  //Factory *m_command; 
-		ICommand *m_command; 
+  		Factory m_command; 
+		//ICommand *m_command; 
 		DNAS m_AllDNAS;
 };
 

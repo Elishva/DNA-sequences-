@@ -15,8 +15,10 @@ public:
 	
 	size_t get_id();
 	std::string get_DNA(size_t index = 99);
+	IDNA * getIDNA();
 	std::string get_name();
 	Status get_status();
+
 	
 private:
 	
@@ -26,5 +28,6 @@ private:
 	IDNA * m_DNA;
 
 	static size_t count_id; 
+
 };
 #endif  // __DNA_AND_DATA__H 

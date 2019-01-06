@@ -12,19 +12,22 @@ bool Execute::run()
 
     if(strcmp(m_cli.getCommand(), "exit") == 0) return false;
 
-
       char ** p = m_cli.getCommand_from_user();
-      createCommand(m_cli.getCommand());
-      m_command->action(++p,m_AllDNAS);
-      m_cli.output(m_command->get_message());
-      return true;
+      //createCommand(m_cli.getCommand());
+	ICommand *c = m_command.getCommand(m_cli.getCommand()); 
+      	c->action(++p,m_AllDNAS);
+        m_cli.output(c->get_message());
+        return true;
 }
+
+
+
 
 void Execute::createCommand(char * command)
 {
     
-
-    if (strcmp(command,"new") == 0)
+	//m_command.getCommand(command);
+    /*if (strcmp(command,"new") == 0)
     {
          m_command = new New();
       
@@ -44,11 +47,20 @@ void Execute::createCommand(char * command)
 	else if (strcmp(command,"save") == 0)
 	{
 		m_command = new Save();
-    }
+	}
 	else if (strcmp(command,"list") == 0)
-    {
-       m_command = new List();
+	{
+		m_command = new List();
     }
+
+	else if (strcmp(command,"pair") == 0)
+	{
+		m_command = new Pair();
+	}
+	else
+	{
+		std::invalid_argument("cannot create this command");
+	}*/
   
 }
 

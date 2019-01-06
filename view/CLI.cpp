@@ -1,8 +1,9 @@
 #include "CLI.h"
 #include <iostream>
 #include <cstdio>
+#include <cstring>
 
-char** CLI::getCommand_from_user()
+char ** CLI::getCommand_from_user()
 {
   std::cout << "\n>cmd >>> ";
   if(fgets(m_command, sizeof(m_command), stdin) == NULL) return 0;

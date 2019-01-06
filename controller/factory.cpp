@@ -2,8 +2,10 @@
 #include "New.h"
 #include "load.h"
 #include "Show.h"
-//#include "list.h"
+#include "list.h"
 #include "save.h"
+#include "pair.h"
+
 Factory::Factory()
 {
 	m_commands["new"] = new New();
@@ -12,6 +14,7 @@ Factory::Factory()
 	m_commands["show"] = new Show();
 }
 
-std::string Factory::getCommand()const
+ICommand * Factory::getCommand(const char * command)const
 {
+	return m_commands.find(command)->second;
 }

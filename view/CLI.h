@@ -10,8 +10,8 @@ class CLI
 {
   	 public:
     
-		char** getCommand_from_user();
-		char** getParseCommands();
+		char ** getCommand_from_user();
+		char ** getParseCommands();
 		char * getCommand();
 		void output(std::string s);
 	private:
