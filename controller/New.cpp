@@ -3,9 +3,11 @@
 #include <sstream>
 #include <cstring>
 #include "../model/DNA.h"
-
+//#include "../model/SharedPtr.h"
+#include "factory.h"
 
 size_t New::s_count_seq = 0; 
+//bool New::reg = Factory::getInstance()->registerCommand("new",new New());
 std::string New::m_message = "" ;
 
 

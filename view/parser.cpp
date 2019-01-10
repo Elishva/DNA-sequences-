@@ -17,8 +17,7 @@ char ** Parser::parseCommand(char * cli)
 		word =strtok(NULL, DELIMETER); 
   	 }
          m_params[i]=NULL;
-	if (m_params[2] == NULL)
-		std::cout << "NUULL" << std::endl;
+
   	 return m_params;
       
 

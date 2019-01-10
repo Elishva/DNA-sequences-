@@ -41,7 +41,6 @@ std::string DnaAndData::get_DNA(size_t index)
 
 
     }
-	std::cout << "PAIRRRRR" << ss.str();
 	return ss.str();
 }
 

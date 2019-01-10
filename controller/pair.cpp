@@ -20,11 +20,10 @@ void Pair::action(char **values , DNAS & dnas)
 	v>>index;
 	DnaAndData * dnadata = dnas[index];
 	IDNA * dna = new PairDNA(dnadata->getIDNA());	
-	 
+	std::cout << dna; 
         
-       
 	std::stringstream message;
-	message << "[" << dnadata->get_id() << "] " << dnadata->get_name() << ": " << dnadata->get_DNA();
+	/*message << "[" << dnadata->get_id() << "] " << dnadata->get_name() << ": " << dna;*/
 	m_message = message.str();
   
 }

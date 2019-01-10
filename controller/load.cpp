@@ -3,10 +3,11 @@
 #include "load.h"
 #include <cstring>
 #include "../model/DnaReader.h"
-
+#include "factory.h"
 
 std::string Load::m_message = "" ;
 size_t Load::s_count_seq = 0; 
+//bool Load::reg = Factory::getInstance()->registerCommand("load",new Load());
 
 bool Load::checkValues( char **values)
 {

@@ -4,7 +4,8 @@
 DnaWriter::DnaWriter(const char* file_name)
 {
 
-    try {
+    try
+    {
          m_write.open(file_name);
         
     }catch (std::exception e){

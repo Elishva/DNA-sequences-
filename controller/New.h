@@ -14,6 +14,7 @@ class New:public ICommand
   private:
 	static std::string m_message ;
 	static size_t s_count_seq; 
+	//static bool reg;
 
 };
 
