@@ -41,7 +41,7 @@ void New::action(char **values , DNAS & dnas)
 		values[1] = v;
 
 	}
-	DnaAndData* dnaAdata = new DnaAndData(dna, values[1] + 1);
+	SharedPtr<DnaAndData> dnaAdata (new DnaAndData(dna, values[1] + 1));
 	dnas.addNewDNA(dnaAdata);
 
 	std::stringstream message;

@@ -18,10 +18,10 @@ void Slice::action(char **values , DNAS & dnas)
 	std::string st;
 	v << values[0]+1;
 	v>>index;
-	DnaAndData * dnadata = dnas[index];
+	SharedPtr<DnaAndData> dnadata = dnas[index];
 	SharedPtr<IDNA>  dna (new SliceDNA (dnadata->getIDNA(),1,4));
 	//check_str(values[1]);	
-	DnaAndData * newdnadata = new DnaAndData(dna,"eli7");
+	SharedPtr<DnaAndData> newdnadata (new DnaAndData(dna,"eli7!"));
 	std::stringstream message;
 	message << "[" << newdnadata->get_id() << "] " << newdnadata->get_name() << ": " << newdnadata->get_DNA();
 	m_message = message.str();

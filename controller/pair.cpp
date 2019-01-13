@@ -18,7 +18,7 @@ void Pair::action(char **values , DNAS & dnas)
 	std::string st;
 	v << values[0]+1;
 	v>>index;
-	DnaAndData * dnadata = dnas[index];
+	SharedPtr<DnaAndData> dnadata = dnas[index];
 	SharedPtr<IDNA>  dna (new PairDNA (dnadata->getIDNA()));
 	//check_str(values[1]);	
 	DnaAndData * newdnadata = new DnaAndData(dna,"eli7");

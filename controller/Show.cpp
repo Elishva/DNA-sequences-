@@ -15,7 +15,7 @@ void Show::action(char **values , DNAS & dnas)
 	size_t index;
         std::stringstream v;
         std::string str;
-	DnaAndData * dnaAdata;
+	SharedPtr<DnaAndData>  dnaAdata;
 	if (values[0][0] == '@')
 	{
 	    std::cout <<values[0][0];
