@@ -2,7 +2,6 @@
 #include "DnaReader.h"
 DnaReader::DnaReader(char* file_name)
 {
-    std::cout<< "HI"<<std::endl;
     m_reader.open(file_name);
     if (!m_reader.is_open())
     {
@@ -15,7 +14,7 @@ DnaReader::~DnaReader()
     m_reader.close();
 }
 
-DNA DnaReader::read()
+IDNA* DnaReader::read()
 {
     size_t size = m_reader.tellg();
     char* txt = new char[size];
@@ -24,7 +23,7 @@ DNA DnaReader::read()
         m_reader >> txt;
 
     m_reader.seekg (0, std::fstream::beg);
-    DNA d(txt);
+    IDNA* d = new DNA(txt);
     delete[]txt;
     return d;
 }

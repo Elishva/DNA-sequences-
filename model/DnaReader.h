@@ -12,7 +12,7 @@ private:
 public:
     DnaReader(char* file_name);
     ~DnaReader();
-    DNA read();
+    IDNA* read();
 };
 
 

@@ -20,9 +20,11 @@ private:
 
 #endif //__FACTORY_H__*/
 
+
 #ifndef __FACTORY_H__
 #define __FACTORY_H__
 
+#include "../Libary/SharedPtr.h"
 #include <map>
 #include "ICommand.h"
 

@@ -1,16 +1,16 @@
-#include "pair.h"
+ #include "slice.h"
 #include <cstdio>
 #include <sstream>
 
-#include "../model/PairDNA.h"
-std::string Pair::m_message = "" ;
+#include "../model/SliceDNA.h"
+std::string Slice::m_message = "" ;
 
-bool Pair::checkValues( char **values)
+bool Slice::checkValues( char **values)
 {
 	return  values[0][0] == '#' ;
 }
 
-void Pair::action(char **values , DNAS & dnas)
+void Slice::action(char **values , DNAS & dnas)
 {
 	if(!checkValues(values))return;
 	size_t index;
@@ -19,7 +19,7 @@ void Pair::action(char **values , DNAS & dnas)
 	v << values[0]+1;
 	v>>index;
 	DnaAndData * dnadata = dnas[index];
-	SharedPtr<IDNA>  dna (new PairDNA (dnadata->getIDNA()));
+	SharedPtr<IDNA>  dna (new SliceDNA (dnadata->getIDNA(),1,4));
 	//check_str(values[1]);	
 	DnaAndData * newdnadata = new DnaAndData(dna,"eli7");
 	std::stringstream message;
@@ -29,7 +29,7 @@ void Pair::action(char **values , DNAS & dnas)
 }
 
 
-std::string Pair::help()
+std::string Slice::help()
 {
     const char * m_help = " SHOW HELP";
     std::cout << "SHOW HELP " << std::endl; 
@@ -37,7 +37,7 @@ std::string Pair::help()
 }
 
 
-std::string Pair::get_message()
+std::string Slice::get_message()
 {
     return m_message;
 }

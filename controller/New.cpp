@@ -18,7 +18,7 @@ bool New::checkValues( char **values)
 
 void New::action(char **values , DNAS & dnas)
 {
-	IDNA * dna;
+	SharedPtr<IDNA> dna;
 	char v [7]; 
 	std::stringstream message1;
 	if(values[1] != NULL &&!checkValues(values))return;

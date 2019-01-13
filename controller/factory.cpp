@@ -28,6 +28,7 @@ ICommand * Factory::getCommand(std::string name)
 	//return m_Commands.find(name)->second;
 }*/
 
+
 #include "factory.h"
 #include "New.h"
 #include "load.h"
@@ -35,6 +36,7 @@ ICommand * Factory::getCommand(std::string name)
 #include "Show.h"
 #include "list.h"
 #include "pair.h"
+#include "slice.h"
 
 FactoryCommand::FactoryCommand()
 {
@@ -44,6 +46,7 @@ FactoryCommand::FactoryCommand()
     m_commands.insert(std::make_pair<std::string ,ICommand*>("save",new Save()));
     m_commands.insert(std::make_pair<std::string ,ICommand*>("list",new List()));
     m_commands.insert(std::make_pair<std::string ,ICommand*>("pair",new Pair()));
+    m_commands.insert(std::make_pair<std::string ,ICommand*>("slice",new Slice()));
 }
 FactoryCommand::~FactoryCommand() {}
 

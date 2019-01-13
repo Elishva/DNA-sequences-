@@ -29,6 +29,9 @@ Nucleotide Nucleotide::get_pair()
     return Nucleotide(comp);
 }
 
+
+
+
 char Nucleotide::get_m_nucleotide()const
 {
     return m_nucleotide;

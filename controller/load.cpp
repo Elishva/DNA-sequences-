@@ -33,7 +33,7 @@ void Load::action( char ** values,DNAS & dnas)
 	}
 		
 	DnaReader dna_reader (values[0]);
-	IDNA *dna = new DNA( dna_reader.read());
+	SharedPtr<IDNA> dna ( dna_reader.read());
 	std::stringstream m ;
 	std::string message = m.str(); 
 

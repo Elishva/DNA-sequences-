@@ -71,10 +71,6 @@ DNA::~DNA()
     delete[](m_seq);
 }
 
-Nucleotide* DNA::get_m_seq() const
-{
-    return m_seq;
-}
 
 size_t DNA::get_m_length_seq() const
 {

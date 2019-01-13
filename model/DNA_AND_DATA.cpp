@@ -6,9 +6,9 @@
 
 size_t DnaAndData::count_id = 1;
 
-DnaAndData::DnaAndData(IDNA *dna, const char* name):m_id(count_id++), m_name(name), m_status(NEW), m_DNA(dna)
+DnaAndData::DnaAndData(SharedPtr<IDNA> dna, const char* name):m_id(count_id++), m_name(name), m_status(NEW), m_DNA(dna)
 {
-	//std::cout << name;	
+
 }
 
 DnaAndData::~DnaAndData()
@@ -25,7 +25,7 @@ size_t DnaAndData::get_id()
 	return m_id;
 }
 
-IDNA * DnaAndData::getIDNA()
+SharedPtr<IDNA> DnaAndData::getIDNA()
 {
 	return m_DNA;
 }
