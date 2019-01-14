@@ -1,13 +1,13 @@
-#ifndef __PAIRDNA_H__
-#define __PAIRDNA_H__
+#ifndef __REPLACEDNA_H__
+#define __REPLACEDNA_H__
 
 #include "IDNA.h"
 #include "../Libary/SharedPtr.h"
 #include <iostream>
-class PairDNA: public IDNA
+class ReplaceDNA: public IDNA
 {
 	public:
-		PairDNA(SharedPtr<IDNA> idna);
+		ReplaceDNA(SharedPtr<IDNA> idna);
 		Nucleotide operator[](size_t index)const;
 		size_t get_m_length_seq() const;
 
@@ -18,4 +18,4 @@ class PairDNA: public IDNA
 };
 
 
-#endif // __PAIRDNA_H__
+#endif // __REPLACEDNA_H__

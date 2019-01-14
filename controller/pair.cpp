@@ -31,8 +31,8 @@ void Pair::action(char **values , DNAS & dnas)
 
 std::string Pair::help()
 {
-    const char * m_help = " SHOW HELP";
-    std::cout << "SHOW HELP " << std::endl; 
+    const char * m_help = " Pair HELP";
+    std::cout << "Pair HELP " << std::endl; 
     return m_help;
 }
 
