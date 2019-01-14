@@ -11,7 +11,6 @@ void DNAS::addNewDNA(SharedPtr<DnaAndData> dnaToAdd)
 
 SharedPtr<DnaAndData>  DNAS::operator [](std::string indx) const
 {
-	std::cout << indx;
 	 return m_DNAS_name.find(indx)->second;
 }
 

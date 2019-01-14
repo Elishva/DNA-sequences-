@@ -40,6 +40,7 @@ ICommand * Factory::getCommand(std::string name)
 #include "len.h"
 #include "quit.h"
 #include "dup.h"
+#include "rename.h"
 
 FactoryCommand::FactoryCommand()
 {
@@ -53,6 +54,7 @@ FactoryCommand::FactoryCommand()
     m_commands.insert(std::make_pair<std::string ,ICommand*>("len",new Len()));
     m_commands.insert(std::make_pair<std::string ,ICommand*>("quit",new Quit()));
     m_commands.insert(std::make_pair<std::string ,ICommand*>("dup",new Dup()));
+    m_commands.insert(std::make_pair<std::string ,ICommand*>("rename",new Rename()));
 }
 FactoryCommand::~FactoryCommand() {}
 

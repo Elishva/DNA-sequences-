@@ -44,6 +44,11 @@ std::string DnaAndData::get_DNA(size_t index)
 	return ss.str();
 }
 
+void DnaAndData::setName(std::string name)
+{
+	m_name = name;
+}
+
 std::string DnaAndData::get_name()
 {
 	return m_name;

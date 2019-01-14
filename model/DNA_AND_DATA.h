@@ -19,6 +19,7 @@ public:
 	SharedPtr<IDNA>  getIDNA();
 	std::string get_name();
 	Status get_status();
+	void setName(std::string name);
 
 	
 private:
