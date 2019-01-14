@@ -38,6 +38,8 @@ ICommand * Factory::getCommand(std::string name)
 #include "pair.h"
 #include "slice.h"
 #include "len.h"
+#include "quit.h"
+#include "dup.h"
 
 FactoryCommand::FactoryCommand()
 {
@@ -49,6 +51,8 @@ FactoryCommand::FactoryCommand()
     m_commands.insert(std::make_pair<std::string ,ICommand*>("pair",new Pair()));
     m_commands.insert(std::make_pair<std::string ,ICommand*>("slice",new Slice()));
     m_commands.insert(std::make_pair<std::string ,ICommand*>("len",new Len()));
+    m_commands.insert(std::make_pair<std::string ,ICommand*>("quit",new Quit()));
+    m_commands.insert(std::make_pair<std::string ,ICommand*>("dup",new Dup()));
 }
 FactoryCommand::~FactoryCommand() {}
 
