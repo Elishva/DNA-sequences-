@@ -1,44 +1,51 @@
 #include "replace.h"
- #include "slice.h"
 #include <cstdio>
 #include <sstream>
 
-#include "../model/SliceDNA.h"
-std::string Slice::m_message = "" ;
+#include "../model/ReplaceDNA.h"
+std::string Replace::m_message = "" ;
 
-bool Slice::checkValues( char **values)
+bool Replace::checkValues( char **values)
 {
-	return  values[0][0] == '#' ;
+	return  values[0][0] == '@' ;
 }
 
-void Slice::action(char **values , DNAS & dnas)
+void Replace::action(char **values , DNAS & dnas)
 {
-	/*if(!checkValues(values))return;
-	size_t index;
+	if(!checkValues(values))return;
+	std::string indexName;
 	std::stringstream v;
-	std::string st;
 	v << values[0]+1;
+	v>>indexName;
+	SharedPtr<DnaAndData> dnadata = dnas[indexName];
+	size_t index;
+	std::stringstream v1;
+	v1 << values[1];
 	v>>index;
-	SharedPtr<DnaAndData> dnadata = dnas[index];
-	SharedPtr<IDNA>  dna (new SliceDNA (dnadata->getIDNA(),1,4));
+	
+	char c;
+	std::stringstream v2;
+	v2 << values[2];
+	v>>c;
+	SharedPtr<IDNA>  dna (new ReplaceDNA (dnadata->getIDNA(),1,'T'));
 	//check_str(values[1]);	
-	SharedPtr<DnaAndData> newdnadata (new DnaAndData(dna,"eli7!"));
+	DnaAndData * newdnadata = new DnaAndData(dna,"eli7@");
 	std::stringstream message;
 	message << "[" << newdnadata->get_id() << "] " << newdnadata->get_name() << ": " << newdnadata->get_DNA();
-	m_message = message.str();*/
+	m_message = message.str();
   
 }
 
 
-std::string Slice::help()
+std::string Replace::help()
 {
-    const char * m_help = " REPLACE HELP";
-    std::cout << "REPLACE HELP " << std::endl; 
+    const char * m_help = " Replace HELP";
+    std::cout << "Replace HELP " << std::endl; 
     return m_help;
 }
 
 
-std::string Slice::get_message()
+std::string Replace::get_message()
 {
     return m_message;
 }

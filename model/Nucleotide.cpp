@@ -30,6 +30,11 @@ Nucleotide Nucleotide::get_pair()
 }
 
 
+char Nucleotide::set_m_nucleotide(const char c)
+{
+    m_nucleotide = c;
+   return m_nucleotide;
+}
 
 
 char Nucleotide::get_m_nucleotide()const
@@ -54,3 +59,5 @@ std::ostream &operator<<(std::ostream& os, const Nucleotide& n)
     os << n.get_m_nucleotide();
     return os;
 }
+
+

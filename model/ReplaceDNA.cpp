@@ -1,13 +1,16 @@
 #include "ReplaceDNA.h"
 
 
-ReplaceDNA::ReplaceDNA(SharedPtr<IDNA> idna):m_Idna(idna)
+ReplaceDNA::ReplaceDNA(SharedPtr<IDNA> idna,size_t index,char c):m_Idna(idna),m_index(index),m_char(c)
 {
 }
 
 Nucleotide ReplaceDNA::operator[](size_t index)const
 {
-    return m_Idna->operator[](index).get_pair();
+	if (index == m_index)
+		return m_Idna->operator[](index).set_m_nucleotide(m_char);
+	return m_Idna->operator[](index);
+
 
 }
 

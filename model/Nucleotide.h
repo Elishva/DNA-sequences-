@@ -14,6 +14,7 @@ public:
     char valid_nucleotide(const char nucleotide);
     Nucleotide get_pair();
     char get_m_nucleotide()const;
+    char set_m_nucleotide(const char c);
     friend std::ostream &operator<<(std::ostream& os, const Nucleotide& n);
 private:
     char m_nucleotide;
